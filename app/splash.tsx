@@ -170,6 +170,7 @@ export default function SplashScreen() {
 
   const navigateToNextScreen = () => {
     if (isAuthenticated) {
+      // If user is authenticated, navigate to their specific section
       if (userType === 'individual') {
         router.replace('/(individual)');
       } else if (userType === 'company') {
@@ -180,12 +181,8 @@ export default function SplashScreen() {
         router.replace('/user-type');
       }
     } else {
-      // Check if user has seen onboarding
-      if (hasSeenOnboarding) {
-        router.replace('/');
-      } else {
-        router.replace('/onboarding');
-      }
+      // If user is not authenticated, always go through onboarding first
+      router.replace('/onboarding');
     }
   };
 

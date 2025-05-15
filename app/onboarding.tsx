@@ -65,7 +65,7 @@ export default function OnboardingScreen() {
 
   const handleFinish = () => {
     markOnboardingComplete();
-    router.replace('/index');
+    router.replace('/user-type');
   };
 
   const handleScroll = Animated.event(
