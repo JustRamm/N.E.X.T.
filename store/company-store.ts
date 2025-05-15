@@ -18,7 +18,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '1',
     name: 'Vysak Krishna',
-    profileImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/1.jpg'),
     jobTitle: 'Senior Frontend Developer',
     experience: 5,
     skills: ['React', 'TypeScript', 'CSS', 'HTML'],
@@ -28,7 +28,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '2',
     name: 'Abiram T Bijoy',
-    profileImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/2.jpg'),
     jobTitle: 'Backend Engineer',
     experience: 3,
     skills: ['Node.js', 'Express', 'MongoDB', 'AWS'],
@@ -38,7 +38,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '3',
     name: 'Trisha Gautam ',
-    profileImage: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/3.jpg'),
     jobTitle: 'UX/UI Designer',
     experience: 4,
     skills: ['Figma', 'Adobe XD', 'User Research', 'Prototyping'],
@@ -48,7 +48,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '4',
     name: 'GopiKrishna',
-    profileImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/2.jpg'),
     jobTitle: 'Full Stack Developer',
     experience: 6,
     skills: ['React', 'Node.js', 'PostgreSQL', 'Docker'],

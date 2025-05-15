@@ -24,7 +24,11 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
     <TouchableOpacity onPress={handlePress} activeOpacity={0.7}>
       <Card style={styles.card}>
         <View style={styles.header}>
-          <Image source={{ uri: job.companyLogo }} style={styles.logo} />
+          <Image source={
+            typeof job.companyLogo === 'string'
+              ? { uri: job.companyLogo }
+              : job.companyLogo
+          } style={styles.logo} />
           <View style={styles.headerText}>
             <Text style={styles.title}>{job.title}</Text>
             <Text style={styles.company}>{job.companyName}</Text>

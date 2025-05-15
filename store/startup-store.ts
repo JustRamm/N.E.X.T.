@@ -18,7 +18,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '1',
     name: 'Alex Morgan',
-    profileImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/1.jpg'),
     jobTitle: 'Full Stack Developer',
     experience: 4,
     skills: ['React', 'Node.js', 'MongoDB', 'AWS', 'Startup Experience'],
@@ -28,7 +28,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '2',
     name: 'Jamie Lee',
-    profileImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/1.jpg'),
     jobTitle: 'Product Designer',
     experience: 3,
     skills: ['UI/UX', 'Figma', 'User Research', 'Prototyping', 'Growth Design'],
@@ -38,7 +38,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '3',
     name: 'Taylor Kim',
-    profileImage: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/1.jpg'),
     jobTitle: 'Growth Marketer',
     experience: 5,
     skills: ['SEO', 'Content Marketing', 'Analytics', 'Social Media', 'Email Campaigns'],
@@ -48,7 +48,7 @@ const mockCandidates: Candidate[] = [
   {
     id: '4',
     name: 'Jordan Rivera',
-    profileImage: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    profileImage: require('@/assets/images/jobSeeker/1.jpg'),
     jobTitle: 'Technical Co-Founder',
     experience: 7,
     skills: ['System Architecture', 'Team Leadership', 'Python', 'Machine Learning', 'Fundraising'],

@@ -41,9 +41,11 @@ export default function StartupProfileScreen() {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.profileHeader}>
           <Image 
-            source={{ 
-              uri: user?.profileImage || 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80'
-            }} 
+            source={
+              typeof user?.profileImage === 'string'
+                ? { uri: user.profileImage }
+                : user?.profileImage
+            }
             style={styles.profileImage} 
           />
           

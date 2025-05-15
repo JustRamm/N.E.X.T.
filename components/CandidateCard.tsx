@@ -21,7 +21,11 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onPress }) => 
     <CardComponent {...cardProps}>
       <Card style={styles.card}>
         <View style={styles.header}>
-          <Image source={{ uri: candidate.profileImage }} style={styles.profileImage} />
+          <Image source={
+            typeof candidate.profileImage === 'string'
+              ? { uri: candidate.profileImage }
+              : candidate.profileImage
+          } style={styles.profileImage} />
           <View style={styles.nameContainer}>
             <Text style={styles.name}>{candidate.name}</Text>
             <Text style={styles.title}>{candidate.jobTitle}</Text>

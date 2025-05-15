@@ -39,7 +39,11 @@ export default function JobDetailsScreen() {
       
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Image source={{ uri: job.companyLogo }} style={styles.logo} />
+          <Image source={
+            typeof job.companyLogo === 'string'
+              ? { uri: job.companyLogo }
+              : job.companyLogo
+          } style={styles.logo} />
           <Text style={styles.title}>{job.title}</Text>
           <Text style={styles.company}>{job.companyName}</Text>
         </View>

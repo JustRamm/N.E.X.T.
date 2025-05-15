@@ -19,8 +19,7 @@ export default function SplashScreen() {
   // Animation values
   const backgroundAnim = useRef(new Animated.Value(0)).current;
   const logoOpacity = useRef(new Animated.Value(0)).current;
-  const logoScale = useRef(new Animated.Value(0.5)).current;
-  const logoRotate = useRef(new Animated.Value(0)).current;
+  const logoScale = useRef(new Animated.Value(0.1)).current;
   const nameOpacity = useRef(new Animated.Value(0)).current;
   const nameTranslateY = useRef(new Animated.Value(20)).current;
   const taglineOpacity = useRef(new Animated.Value(0)).current;
@@ -34,12 +33,6 @@ export default function SplashScreen() {
   const highlightInterpolation = highlightAnim.interpolate({
     inputRange: [0, 1],
     outputRange: [0, 200],
-  });
-  
-  // Create rotation animation
-  const rotateInterpolation = logoRotate.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
   });
 
   // Pulse animation for the button
@@ -75,26 +68,19 @@ export default function SplashScreen() {
         useNativeDriver: false,
         easing: Easing.out(Easing.ease),
       }),
-      
-      // Logo animation with rotation and scale
+      // Logo pop-in animation (scale and fade in)
       Animated.parallel([
         Animated.timing(logoOpacity, {
           toValue: 1,
-          duration: 800,
+          duration: 400,
           useNativeDriver: true,
           easing: Easing.out(Easing.ease),
         }),
-        Animated.timing(logoRotate, {
+        Animated.spring(logoScale, {
           toValue: 1,
-          duration: 1200,
+          friction: 5,
+          tension: 80,
           useNativeDriver: true,
-          easing: Easing.out(Easing.ease),
-        }),
-        Animated.timing(logoScale, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-          easing: Easing.out(Easing.elastic(1)),
         }),
         Animated.timing(highlightAnim, {
           toValue: 1,
@@ -103,7 +89,6 @@ export default function SplashScreen() {
           easing: Easing.out(Easing.ease),
         }),
       ]),
-      
       // Name animation
       Animated.parallel([
         Animated.timing(nameOpacity, {
@@ -119,7 +104,6 @@ export default function SplashScreen() {
           easing: Easing.out(Easing.back(1.5)),
         }),
       ]),
-      
       // Tagline animation
       Animated.parallel([
         Animated.timing(taglineOpacity, {
@@ -135,7 +119,6 @@ export default function SplashScreen() {
           easing: Easing.out(Easing.back(1.5)),
         }),
       ]),
-      
       // Delay for reading the tagline
       Animated.delay(500),
     ]).start(() => {
@@ -143,7 +126,6 @@ export default function SplashScreen() {
       if (!isAuthenticated && !hasSeenOnboarding) {
         // Show get started button if not authenticated and hasn't seen onboarding
         setShowGetStarted(true);
-        
         // Animate the button
         Animated.parallel([
           Animated.timing(buttonOpacity, {
@@ -238,13 +220,11 @@ export default function SplashScreen() {
             })
           }
         ]} />
-        
         <Animated.View style={[
           styles.logoContainer,
           {
             transform: [
               { scale: logoScale },
-              { rotate: rotateInterpolation }
             ]
           }
         ]}>
@@ -259,7 +239,7 @@ export default function SplashScreen() {
           transform: [{ translateY: nameTranslateY }]
         }
       ]}>
-        N.E.X.T
+        N.E.X.T.
       </Animated.Text>
       
       <Animated.Text style={[
